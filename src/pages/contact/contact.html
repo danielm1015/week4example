@@ -1,0 +1,30 @@
+<!--
+  Generated template for the ContactPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Contact</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <h3 text-center>Select your favorite contact</h3>
+  <ion-list>
+    <button
+      ion-item
+      *ngFor="let contactGroup of contactCollection"
+      [navPush]="peoplePage"
+      [navParams]="contactGroup">
+      <ion-icon [name]="contactGroup.icon" item-left></ion-icon>
+      <h2>{{ contactGroup.category | uppercase }}</h2>
+      <p>{{ contactGroup.contacts.length }} Contacts</p>
+      
+    </button>
+  </ion-list>
+
+</ion-content>
